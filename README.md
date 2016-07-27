@@ -24,6 +24,8 @@ command[check_gluster]=/usr/local/nagios/libexec/check_gluster.pl -v data -n 4
 The script wraps a call to gluster, and that command needs to be run as root, 
 so you might need to add something similar to your sudoers.
 ````
+
+Defaults:nagios !requiretty
 nagios ALL=NOPASSWD:/usr/sbin/gluster volume info data
 ````
 Put this in command.cfg on your nagios server.
